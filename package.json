@@ -9,7 +9,7 @@
 	"devDependencies": {
 		"@prismicio/client": "^4.0.0",
 		"@sveltejs/adapter-node": "next",
-		"@sveltejs/adapter-static": "^1.0.0-next.0",
+		"@sveltejs/adapter-static": "^1.0.0-next.3",
 		"@sveltejs/kit": "next",
 		"prismic-dom": "^2.2.5",
 		"svelte": "^3.29.0",
