@@ -1,5 +1,7 @@
+<!-- ~/src/routes/[uid].svelte -->
+
 <script context="module">
-	import Client from '../../utilities/client'
+  import Client from './../../utils/client'
   import PrismicDom from 'prismic-dom'
 
   export async function load({ page }) {
@@ -12,19 +14,18 @@
       }
     };
   }
-
-	let text = "Homepage"
 </script>
+
 <script>
   import Nav from "./../lib/nav.svelte"
-	export let document
+  export let document
 </script>
 
 <main>
 	<div class="header container" style="background-image: url('{document.data.image.url}')">
-    <div class="nav">
-      <Nav/>
-    </div>
+		<div class="nav">
+			<Nav />
+		</div>
 		<h1>
 			{document.data.title}
 		</h1>
@@ -48,20 +49,12 @@
 		width: 100%;
 		max-width: 700px;
 	}
-
-	h1 {
-		color: white;
-		text-shadow: 0px 1px 3px rgba(0,0,0,.8), 0px 0px 6px rgba(0,0,0,.8);
-		font-size: 3rem;
-	}
-
+  
 	.header {
+    color: white;
+    text-shadow: 0px 1px 3px rgba(0,0,0,.8), 0px 0px 6px rgba(0,0,0,.8);
 		background-size: cover;
 		min-height: 25vw;
 		justify-content: space-between;
-	}
-
-  .text {
-		padding: 2rem 0;
 	}
 </style>

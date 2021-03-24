@@ -1,6 +1,8 @@
+<!-- ~/src/lib/nav.svelte -->
+
 <nav>
-  <a href="/" rel="prefetch">Home</a>
-  <a href="/about" rel="prefetch">About</a>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
 </nav>
 
 <style>  
