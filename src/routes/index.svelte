@@ -15,15 +15,14 @@
 </script>
 
 <script>
-  import Nav from "./../lib/nav.svelte"
   export let document
 </script>
 
 <main>
   <div class="header container" style="background-image: url('{document.data.image.url}')">
-    <div class="nav">
+    <!-- <div class="nav">
       <Nav />
-    </div>
+    </div> -->
     <h1>
       {document.data.title}
     </h1>
@@ -35,24 +34,13 @@
   </div>
 </main>
 
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0px 20px;
-  }
-
-  .container > * {
-    width: 100%;
-    max-width: 700px;
-  }
-  
+<style>  
   .header {
     color: white;
     text-shadow: 0px 1px 3px rgba(0,0,0,.8), 0px 0px 6px rgba(0,0,0,.8);
     background-size: cover;
     min-height: 25vw;
-    justify-content: space-between;
+    justify-content: flex-end;
+		padding-top: 2rem;
   }
 </style>
