@@ -4,8 +4,9 @@
   import Client from './../../utils/client'
   import PrismicDom from 'prismic-dom'
 
-  export async function load({ page }) {
+  export async function load({ page, fetch, session }) {
     const { uid } = page.params
+		console.log("session:", session)
     const document = await Client.getByUID('page',uid)
     return {
       props: {
