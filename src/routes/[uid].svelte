@@ -7,13 +7,7 @@
   export async function load({ page, session }) {
     const { uid } = page.params
 		const { cookie } = session
-		const req = {
-			headers: {
-				cookie
-			}
-		}
-		console.log("session:", req)
-    const document = await Client(req).getByUID('page', uid )
+    const document = await Client(cookie).getByUID('page', uid )
     return {
       props: {
         document,
