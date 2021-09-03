@@ -6,9 +6,6 @@
   import "./../styles/globals.css"
 </script>
 
-<svelte:head>
-  <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=svelte-tutorial"></script>
-</svelte:head>
 <div class="flex-layout">
   <header class="absolute">
     <Nav />
