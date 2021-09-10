@@ -3,11 +3,14 @@
 <script context="module">
   import Client from './../../utils/client'
   import PrismicDom from 'prismic-dom'
+	import {browser} from "$app/env"
 
   export async function load({ page, session }) {
     const { uid } = page.params
 		const { cookie } = session
-    const document = await Client(cookie).getByUID('page', uid )
+    const document = browser
+			? await Client(window.document.cookie).getByUID('page', uid )
+			: await Client().getByUID('page', uid )
     return {
       props: {
         document,

@@ -1,19 +1,19 @@
-<script context="module">
-  import Prismic from '@prismicio/client'
-  const apiEndpoint = 'https://svelte-tutorial.cdn.prismic.io/api/v2'
-  const linkResolver = (doc) => '/' + doc.uid
+<script>
+    import Prismic from '@prismicio/client'
+    import {goto} from '$app/navigation'
+    import {onMount} from "svelte"
 
-  const client = Prismic.client(apiEndpoint)
+    const linkResolver = (doc) => '/' + doc.uid 
+    const apiEndpoint = 'https://svelte-tutorial.cdn.prismic.io/api/v2'
+    const client = Prismic.client(apiEndpoint)
 
-  export async function load({session}) {
-    const {previewToken, documentId} = session
-    const url = await client.getPreviewResolver(previewToken, documentId).resolve(linkResolver, '/')
-    return {
-      redirect: url,
-      status: 302
-    }
-  }
-
+    onMount(async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get("token")
+      const documentId = urlParams.get("documentId")
+      const redirect = await client.getPreviewResolver(token, documentId).resolve(linkResolver, '/')
+      await goto(redirect)
+  })
 </script>
 
 <main>
