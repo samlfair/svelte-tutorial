@@ -5,9 +5,8 @@
   import PrismicDom from 'prismic-dom'
 	import {browser} from "$app/env"
 
-  export async function load({ page, session }) {
+  export async function load({ page }) {
     const { uid } = page.params
-		const { cookie } = session
     const document = browser
 			? await Client(window.document.cookie).getByUID('page', uid )
 			: await Client().getByUID('page', uid )
