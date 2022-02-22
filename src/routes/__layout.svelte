@@ -1,4 +1,4 @@
-<!-- ~/src/routes/$layout.svelte -->
+<!-- ~/src/routes/__layout.svelte -->
 
 <script>
   import Nav from "./../lib/nav.svelte"
