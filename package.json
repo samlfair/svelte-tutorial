@@ -1,5 +1,5 @@
 {
-  "name": "svelte-feb",
+  "name": "svelte-kit-app",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",

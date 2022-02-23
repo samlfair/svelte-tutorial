@@ -1,6 +1,0 @@
-[build]
-    command = "npm run build"
-    publish = "build"       # directory containing static files
-    functions = "functions" # directory containing serverless function
-[[plugins]]
-    package = "@netlify/plugin-functions-install-core"
